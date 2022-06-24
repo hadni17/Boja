@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar border-gray-200 px-6 py-3 navbar-light bg-light">
+        <div class="container flex flex-wrap justify-between items-center mx-auto ">
+            <span class="self-center text-xl font-semibold dark:text-white">Boja App</span>
+            <div class="md:flex md:block md:w-auto" id="example-navbar-warning">
+                <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                <li>
+                    <a href="/" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+      </nav>
+      <!-- jumbotron -->
+    <div class="container bg-yellow-500 shadow-2xl text-center py-12">
+        <h2 class="text-3xl leading-9 font-bold tracking-tight text-white sm:text-4xl sm:leading-10 mb-4">
+            Cari resep favoritmu disini!
+        </h2>
+        <div class="flex items-center justify-center ">
+            <div class="flex">
+                <input type="text" class="px-4 py-2 w-96 text-base font-normal text-gray-700 bg-white border border-solid border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search..."  id="user-inp">
+                <button id="search-btn" class="px-4 ml-2 text-white bg-blue-600 text-white font-medium text-xs leading-tight rounded hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" >
+                    Search
+                </button>
+            </div>
+        </div>
+      
+    </div>
+    <!-- card -->
+    <div id="content" class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-5"></div>
+    </div>
+    <!-- hasil search -->
+    <div class="flex items-center justify-center ">
+        <div class="flex">
+        <div id="result"></div>
+        </div>
+        </div>
+      <!-- Script -->
+      <!-- <script  type="text/javascript" src="script.js"></script> -->
+      <script  type="text/javascript" src="search.js"></script>
+
+</body>
+</html>
