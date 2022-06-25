@@ -7,6 +7,38 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+
+#spinner:not([hidden]) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(0, 0, 0, 0.5);
+  }
+
+  #spinner::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #CD090B;
+  border-radius: 100%;
+  will-change: transform;
+  animation: spin 1s infinite linear;
+  }
+
+  @keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+  }
 *,
 ::before,
 ::after {
