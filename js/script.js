@@ -3,15 +3,23 @@ const spinner = document.getElementById("spinner");
 let result = document.getElementById("result");
 let searchBtn = document.getElementById("search-btn");
 let url = "https://masak-apa-tomorisakura.vercel.app/api/search/?q=";
+
+
 searchBtn.addEventListener("click", () => {
   let userInp = document.getElementById("user-inp").value;
+  if (userInp.length == 0) {
+    alert("Input Field Cannot Be Empty");
+  } else {
   spinner.removeAttribute('hidden');
-    fetch(url + userInp)
-      .then((response) => response.json())
+
+  fetch(url + userInp)
+      .then((response) =>  {
+        return response.json();
+      })
       .then((data) => {    
         spinner.setAttribute('hidden', '');
         result.innerHTML = '';
-        console.log(data.results[0].key);
+        // console.log(data.results[0].key);
         for(let i =0;i<=2;i++){
             let key = data.results[i].key;
           fetch("https://masak-apa-tomorisakura.vercel.app/api/recipe/"+key)  
@@ -42,8 +50,8 @@ searchBtn.addEventListener("click", () => {
                          </div>`;
            })
         }
-      })
-      .catch(() => {
+      }) .catch(() => {
         result.innerHTML = `<h3>Invalid Input</h3>`;
       });
+    }
 });
